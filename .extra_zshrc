@@ -1,0 +1,39 @@
+export PATH=$BRAZIL_CLI_BIN:$PATH
+
+for f in SDETools envImprovement AmazonAwsCli OdinTools; do
+    if [[ -d /apollo/env/$f ]]; then
+        export PATH=$PATH:/apollo/env/$f/bin
+    fi
+done
+
+alias bb=brazil-build
+
+alias bba='brazil-build apollo-pkg'
+alias bbr='brazil-build release'
+alias bre='brazil-runtime-exec'
+alias brc='brazil-recursive-cmd'
+alias bws='brazil ws'
+alias bwsuse='bws use --gitMode -p'
+alias bwscreate='bws create -n'
+alias brc=brazil-recursive-cmd
+alias bbr='brc brazil-build'
+alias bball='brc --allPackages'
+alias bbb='brc --allPackages brazil-build'
+alias bbra='bbr apollo-pkg'
+alias bbsync='brazil ws --sync --md'
+alias bbs='brazil-build server'
+alias bb-restart='brazil-package-cache stop'
+
+alias tfs='ssh ihm-timberfs-2a-f628101b.us-west-2.amazon.com'
+
+alias sam="brazil-build-tool-exec sam"
+alias auth='kinit -f && mwinit -o'
+alias k='kinit -f'
+alias livewatch="/apollo/env/LiveWatchProxy/bin/run-livewatch"
+
+export JAVA_HOME=/apollo/env/envImprovement/jdk1.8
+
+export ENVIMPROVE=/apollo/env/envImprovement/bin
+export TOOLBOX=~/.toolbox/bin
+export PATH=/apollo/env/SDETools/bin:$PATH:$TOOLBOX:$JAVA_HOME/bin  # MIDWAY PATH: Path changed for ssh
+export PATH=$PATH:/apollo/env/GordianKnot/bin
